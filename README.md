@@ -98,18 +98,9 @@ from PyCSP.csp import CSP
 csp = CSP[str, int](variables=variables, domains=domains)
 
 # Add the constraints to the CSP problem
-csp.add_constraint(row1)
-csp.add_constraint(row2)
-csp.add_constraint(row3)
-csp.add_constraint(row4)
-csp.add_constraint(col1)
-csp.add_constraint(col2)
-csp.add_constraint(col3)
-csp.add_constraint(col4)
-csp.add_constraint(square1)
-csp.add_constraint(square2)
-csp.add_constraint(square3)
-csp.add_constraint(square4)
+csp.add_constraints([row_c1, row_c2, row_c3, row_c4])
+csp.add_constraints([col_c1, col_c2, col_c3, col_c4])
+csp.add_constraints([square_c1, square_c2, square_c3, square_c4])
 
 # Solve the CSP with backtracking search
 result = csp.backtracking_search()

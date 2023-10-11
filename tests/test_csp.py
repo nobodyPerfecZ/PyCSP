@@ -81,18 +81,9 @@ class TestCSP(unittest.TestCase):
         self.square_c4 = NotEqualConstraint(["X11", "X12", "X15", "X16"])
 
         # Add the constraints
-        self.csp.add_constraint(self.row_c1)
-        self.csp.add_constraint(self.row_c2)
-        self.csp.add_constraint(self.row_c3)
-        self.csp.add_constraint(self.row_c4)
-        self.csp.add_constraint(self.col_c1)
-        self.csp.add_constraint(self.col_c2)
-        self.csp.add_constraint(self.col_c3)
-        self.csp.add_constraint(self.col_c4)
-        self.csp.add_constraint(self.square_c1)
-        self.csp.add_constraint(self.square_c2)
-        self.csp.add_constraint(self.square_c3)
-        self.csp.add_constraint(self.square_c4)
+        self.csp.add_constraints([self.row_c1, self.row_c2, self.row_c3, self.row_c4])
+        self.csp.add_constraints([self.col_c1, self.col_c2, self.col_c3, self.col_c4])
+        self.csp.add_constraints([self.square_c1, self.square_c2, self.square_c3, self.square_c4])
 
     def test_backtracking_search(self):
         """

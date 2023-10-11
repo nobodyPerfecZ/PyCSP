@@ -69,6 +69,17 @@ class CSP(Generic[V, D]):
                 # Case: Variable not founded
                 raise AttributeError("#ERROR_CSP: Not all variables in constraint are given in the CSP!")
 
+    def add_constraints(self, constraints: list[Constraint[V, D]]):
+        """
+        Adds a new constraint to the Constraint Satisfaction Problem (CSP).
+
+        Args:
+            constraints (list[Constraint[V, D]]): new constraints to add to the CSP
+        """
+        for constraint in constraints:
+            self.add_constraint(constraint)
+
+
     def backtracking_search(self, assignment: dict[V, D] = {}) -> Optional[dict[V, D]]:
         """
         Simple backtracking search to solve a constraint satisfaction problem (CSP), where we want to assign each variable
