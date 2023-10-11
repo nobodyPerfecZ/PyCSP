@@ -44,6 +44,17 @@ class TestEqualToConstraint(unittest.TestCase):
         self.assertFalse(not_satisfied2)
         self.assertFalse(not_satisfied3)
 
+    def test_str(self):
+        """
+        Tests the magic method __str__().
+        """
+        expected = "Constraint: X1 = X2 = X3 = X4 = 1"
+        self.assertEqual(expected, str(self.constraint))
+
+    def test_repr(self):
+        expected = "[EqualToConstraint(['X1', 'X2', 'X3', 'X4'], 1)]"
+        self.assertEqual(expected, str([self.constraint]))
+
 
 class TestEqualConstraint(unittest.TestCase):
     """
@@ -84,6 +95,17 @@ class TestEqualConstraint(unittest.TestCase):
         self.assertFalse(not_satisfied1)
         self.assertFalse(not_satisfied2)
         self.assertFalse(not_satisfied3)
+
+    def test_str(self):
+        """
+        Tests the magic method __str__().
+        """
+        expected = "Constraint: X1 = X2 = X3 = X4"
+        self.assertEqual(expected, str(self.constraint))
+
+    def test_repr(self):
+        expected = "[EqualConstraint(['X1', 'X2', 'X3', 'X4'])]"
+        self.assertEqual(expected, str([self.constraint]))
 
 
 class TestNotEqualToConstraint(unittest.TestCase):
@@ -128,6 +150,17 @@ class TestNotEqualToConstraint(unittest.TestCase):
         self.assertFalse(not_satisfied2)
         self.assertFalse(not_satisfied3)
 
+    def test_str(self):
+        """
+        Tests the magic method __str__().
+        """
+        expected = "Constraint: X1 != 1, X2 != 1, X3 != 1, X4 != 1"
+        self.assertEqual(expected, str(self.constraint))
+
+    def test_repr(self):
+        expected = "[NotEqualToConstraint(['X1', 'X2', 'X3', 'X4'], 1)]"
+        self.assertEqual(expected, str([self.constraint]))
+
 
 class TestNotEqualConstraint(unittest.TestCase):
     """
@@ -169,6 +202,17 @@ class TestNotEqualConstraint(unittest.TestCase):
         self.assertFalse(not_satisfied1)
         self.assertFalse(not_satisfied2)
         self.assertFalse(not_satisfied3)
+
+    def test_str(self):
+        """
+        Tests the magic method __str__().
+        """
+        expected = "Constraint: X1 != X2 != X3 != X4"
+        self.assertEqual(expected, str(self.constraint))
+
+    def test_repr(self):
+        expected = "[NotEqualConstraint(['X1', 'X2', 'X3', 'X4'])]"
+        self.assertEqual(expected, str([self.constraint]))
 
 
 if __name__ == '__main__':

@@ -14,7 +14,7 @@ class Constraint(Generic[V, D]):
     """
 
     def __init__(self, variables: list[V]):
-        assert len(variables) > 1, "#ERROR_CONSTRAINT: variables should have at least 1 variable!"
+        assert len(variables) >= 1, "#ERROR_CONSTRAINT: variables should have at least 1 variable!"
         self._variables = variables
 
     def get_variables(self) -> list[V]:
@@ -34,6 +34,22 @@ class Constraint(Generic[V, D]):
         
         Returns:
             bool: True, if all variables assigned with the domain fulfills the conditions
+        """
+        pass
+
+    @abstractmethod
+    def __str__(self) -> str:
+        """
+        Returns:
+            str: String representation of the Constraint
+        """
+        pass
+
+    @abstractmethod
+    def __repr__(self) -> str:
+        """
+        Returns:
+            str: Short string representation of the Constraint
         """
         pass
 
@@ -73,6 +89,16 @@ class EqualToConstraint(Constraint[V, D]):
                 return False
         return True
 
+    def __str__(self) -> str:
+        text = f"Constraint: "
+        for variable in self._variables:
+            text += f"{str(variable)} = "
+        text += str(self._domain)
+        return text
+
+    def __repr__(self) -> str:
+        return f"EqualToConstraint({str(self._variables)}, {str(self._domain)})"
+
 
 class EqualConstraint(Constraint[V, D]):
     """
@@ -107,6 +133,16 @@ class EqualConstraint(Constraint[V, D]):
                 # Case: Found x-th variable which has a different value
                 return False
         return True
+
+    def __str__(self) -> str:
+        text = f"Constraint: "
+        for variable in self._variables:
+            text += f"{str(variable)} = "
+        text = text[:-3]
+        return text
+
+    def __repr__(self) -> str:
+        return f"EqualConstraint({str(self._variables)})"
 
 
 class NotEqualToConstraint(Constraint[V, D]):
@@ -144,6 +180,16 @@ class NotEqualToConstraint(Constraint[V, D]):
                 return False
         return True
 
+    def __str__(self) -> str:
+        text = f"Constraint: "
+        for variable in self._variables:
+            text += f"{str(variable)} != {str(self._domain)}, "
+        text = text[:-2]
+        return text
+
+    def __repr__(self) -> str:
+        return f"NotEqualToConstraint({str(self._variables)}, {str(self._domain)})"
+
 
 class NotEqualConstraint(Constraint[V, D]):
     """
@@ -178,3 +224,13 @@ class NotEqualConstraint(Constraint[V, D]):
                 # Case: Found non-duplicated domain value
                 visited.add(assignment[variable])
         return True
+
+    def __str__(self) -> str:
+        text = f"Constraint: "
+        for variable in self._variables:
+            text += f"{str(variable)} != "
+        text = text[:-4]
+        return text
+
+    def __repr__(self) -> str:
+        return f"NotEqualConstraint({str(self._variables)})"
