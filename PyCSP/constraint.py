@@ -82,7 +82,7 @@ class EqualToConstraint(Constraint[V, D]):
         Returns:
             bool: True, if all variables assigned with the domain fulfills the condition
         """
-        visited = set([self._domain])
+        visited = {self._domain}
         for variable in self._variables:
             if variable in assignment and assignment[variable] not in visited:
                 # Case: Found x-th variable which has a different value
@@ -173,7 +173,7 @@ class NotEqualToConstraint(Constraint[V, D]):
         Returns:
             bool: True, if all variables assigned with the domain fulfills the condition
         """
-        visited = set([self._domain])
+        visited = {self._domain}
         for variable in self._variables:
             if variable in assignment and assignment[variable] in visited:
                 # Case: Found x-th variable which has the same value
