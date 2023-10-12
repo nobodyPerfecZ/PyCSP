@@ -1,7 +1,7 @@
 # PyCSP
 PyCSP is a simple Python Framework for solving Constraint Satisfaction Problems (CSPs). 
-The following link shows the definition of a CSP: 
-[Wikipedia - Constraint Satisfaction Problem](https://en.wikipedia.org/wiki/Constraint_satisfaction_problem)
+You can find more information about CSPs
+[here](https://en.wikipedia.org/wiki/Constraint_satisfaction_problem).
 
 ### Solving CSPs with PyCSP
 In the following, we want to solve a 2x2 sudoku puzzle with PyCSP.
