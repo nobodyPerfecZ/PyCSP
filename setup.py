@@ -10,8 +10,9 @@ with open("README.md", "r") as file:
 
 setup(
     name="PyCSP",
-    version="0.0.0.0.0.0.0.0.0.1",
+    version="0.0.1",
     author=["Dennis J.", "Patrick B."],
+    url="https://github.com/nobodyPerfecZ/py-csp",
     python_requires=">=3.10",
     packages=find_packages(
         exclude=[
