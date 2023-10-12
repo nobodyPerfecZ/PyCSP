@@ -4,7 +4,7 @@ You can find more information about CSPs
 [here](https://en.wikipedia.org/wiki/Constraint_satisfaction_problem).
 
 ### Solving CSPs with PyCSPSolver
-In the following, we want to solve a 2x2 sudoku puzzle with PyCSP.
+In the following, we want to solve a 2x2 sudoku puzzle with PyCSPSolver.
 First we need to define our problem as CSP.
 So we have to define variables, domains and constraints before we can solve it.
 
@@ -49,7 +49,7 @@ domains = {
 ```
 
 Now we have to define the constraints.
-PyCSP has in principal four different types of constraints.
+PyCSPSolver has in principal four different types of constraints.
 
 | Type of Constraint     | Explanation                                | Example  |
 |:-----------------------|:-------------------------------------------|:---------|
@@ -92,7 +92,7 @@ square4 = NotEqualConstraint(["X11", "X12", "X15", "X16"])
 ```
 
 Now we have defined our 2x2 sudoku board as a CSP.
-With all combined, we can now solve the CSP with PyCSP.
+With all combined, we can now solve the CSP with PyCSPSolver.
 The following code shows how to solve the CSP with simple backtracking search:
 
 ```python
