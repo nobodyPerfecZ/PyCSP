@@ -28,7 +28,7 @@ The possible values for each tile represents our domain:
 Our domain for each X_i:
 D = {1, 2, 3, 4}
 """
-domain = {
+domains = {
     "X1": [1, 2, 3, 4],
     "X2": [1, 2, 3, 4],
     "X3": [1, 2, 3, 4],
@@ -98,12 +98,13 @@ from PyCSP.csp import CSP
 csp = CSP[str, int](variables=variables, domains=domains)
 
 # Add the constraints to the CSP problem
-csp.add_constraints([row_c1, row_c2, row_c3, row_c4])
-csp.add_constraints([col_c1, col_c2, col_c3, col_c4])
-csp.add_constraints([square_c1, square_c2, square_c3, square_c4])
+csp.add_constraints([row1, row2, row3, row4])
+csp.add_constraints([col1, col2, col3, col4])
+csp.add_constraints([square1, square2, square3, square4])
 
 # Solve the CSP with backtracking search
 result = csp.backtracking_search()
+print(result)
 ```
 
 
