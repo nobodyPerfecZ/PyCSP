@@ -1,7 +1,7 @@
 import unittest
 
-from PyCSP.csp import CSP
-from PyCSP.constraint import NotEqualConstraint
+from PyCSPSolver.csp import CSP
+from PyCSPSolver.constraint import NotEqualConstraint
 
 
 class TestCSP(unittest.TestCase):

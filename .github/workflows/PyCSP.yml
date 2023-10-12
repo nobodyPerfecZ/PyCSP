@@ -1,8 +1,8 @@
-name: Build & Test PyCSP
+name: Build & Test PyCSPSolver
 
 on:
   push:
-    paths: ["PyCSP/*", "tests/*"]
+    paths: ["PyCSPSolver/*", "tests/*"]
 
 jobs:
   job:

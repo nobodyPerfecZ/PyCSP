@@ -9,10 +9,10 @@ with open("README.md", "r") as file:
     long_description = file.read()
 
 setup(
-    name="PyCSP",
+    name="PyCSPSolver",
     version="0.0.1",
     author=["Dennis J.", "Patrick B."],
-    url="https://github.com/nobodyPerfecZ/py-csp",
+    url="https://github.com/nobodyPerfecZ/py-csp-solver",
     python_requires=">=3.10",
     packages=find_packages(
         exclude=[

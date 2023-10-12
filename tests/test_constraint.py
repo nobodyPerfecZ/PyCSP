@@ -1,6 +1,6 @@
 import unittest
 
-from PyCSP.constraint import EqualToConstraint, EqualConstraint, NotEqualToConstraint, NotEqualConstraint
+from PyCSPSolver.constraint import EqualToConstraint, EqualConstraint, NotEqualToConstraint, NotEqualConstraint
 
 
 class TestEqualToConstraint(unittest.TestCase):

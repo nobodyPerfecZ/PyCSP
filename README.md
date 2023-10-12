@@ -1,9 +1,9 @@
-# PyCSP
-PyCSP is a simple Python Framework for solving Constraint Satisfaction Problems (CSPs). 
+# PyCSPSolver
+PyCSPSolver is a simple Python Framework for solving Constraint Satisfaction Problems (CSPs). 
 You can find more information about CSPs
 [here](https://en.wikipedia.org/wiki/Constraint_satisfaction_problem).
 
-### Solving CSPs with PyCSP
+### Solving CSPs with PyCSPSolver
 In the following, we want to solve a 2x2 sudoku puzzle with PyCSP.
 First we need to define our problem as CSP.
 So we have to define variables, domains and constraints before we can solve it.
@@ -59,8 +59,9 @@ PyCSP has in principal four different types of constraints.
 | NotEqualConstraint()   | variables should have not an equal value   | X1 != X2 |
 
 The following shows how to define the constraints from the example:
+
 ```python
-from PyCSP.constraint import EqualToConstraint, EqualConstraint, NotEqualToConstraint, NotEqualConstraint
+from PyCSPSolver.constraint import EqualToConstraint, EqualConstraint, NotEqualToConstraint, NotEqualConstraint
 
 constraint1 = EqualToConstraint(["X1"], 1)
 constraint2 = EqualConstraint(["X1", "X2"])
@@ -72,8 +73,9 @@ With that in mind, we can now define the constraints of the 2x2 sudoku board, wh
 sudoku.
 The sudoku rules are that in each row, column or 2x2 square each value should only exist once.
 The following shows the constraint of the 2x2 sudoku board:
+
 ```python
-from PyCSP.constraint import NotEqualConstraint
+from PyCSPSolver.constraint import NotEqualConstraint
 
 row1 = NotEqualConstraint(["X1", "X2", "X3", "X4"])
 row2 = NotEqualConstraint(["X5", "X6", "X7", "X8"])
@@ -92,8 +94,9 @@ square4 = NotEqualConstraint(["X11", "X12", "X15", "X16"])
 Now we have defined our 2x2 sudoku board as a CSP.
 With all combined, we can now solve the CSP with PyCSP.
 The following code shows how to solve the CSP with simple backtracking search:
+
 ```python
-from PyCSP.csp import CSP
+from PyCSPSolver.csp import CSP
 
 csp = CSP[str, int](variables=variables, domains=domains)
 

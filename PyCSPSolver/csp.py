@@ -1,6 +1,6 @@
 from typing import TypeVar, Generic, Optional
 
-from PyCSP.constraint import Constraint
+from PyCSPSolver.constraint import Constraint
 
 V = TypeVar("V")
 D = TypeVar("D")
