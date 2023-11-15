@@ -2,7 +2,9 @@ name: Build & Test PyCSPSolver
 
 on:
   push:
-    paths: ["PyCSPSolver/*", "tests/*"]
+    paths:
+      - "PyCSPSolver/**"
+      - "tests/**"
 
 jobs:
   job:
